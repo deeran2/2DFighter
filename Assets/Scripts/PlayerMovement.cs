@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	public Transform groundCheck;
 	public bool facingRight = true;
 	private Animator anim;
-
+	public bool firing = false;
 
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -21,25 +21,27 @@ public class PlayerMovement : MonoBehaviour {
 	
 	void FixedUpdate () {
 		grounded = false;
-		Jump ();
-		Move ();
-
-	
+			
+		if (!firing) {
+			Jump ();
+			Move ();
+		}
 	}
 
 	void Move(){
-		float h = Input.GetAxis ("Horizontal");
-		rb.velocity = new Vector2 (h * speed, rb.velocity.y);
+			float h = Input.GetAxis ("Horizontal");
+			rb.velocity = new Vector2 (h * speed, rb.velocity.y);
 
-		if (grounded) {
-			anim.SetFloat ("Speed", Mathf.Abs (h));
-		}
+			if (grounded) {
+				anim.SetFloat ("Speed", Mathf.Abs (h));
+			}
 
-		if (h > 0 && !facingRight) {
-			Flip ();
-		} else if (h < 0 && facingRight) {
-			Flip ();
-		}
+			if (h > 0 && !facingRight) {
+				Flip ();
+			} else if (h < 0 && facingRight) {
+				Flip ();
+			}
+		
 	}
 
 	void Flip(){
