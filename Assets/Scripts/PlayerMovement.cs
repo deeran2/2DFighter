@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour {
 	public Transform groundCheck;
 	public bool facingRight = true;
 	private Animator anim;
+
+	public bool blocking = false;
 	public bool firing = false;
 
 	void Start () {
@@ -22,7 +24,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate () {
 		grounded = false;
 			
-		if (!firing) {
+		if (!firing  && !blocking) {
 			Jump ();
 			Move ();
 		}

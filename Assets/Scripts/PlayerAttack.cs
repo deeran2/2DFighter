@@ -30,15 +30,15 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	
 	void Update () {
-		Aim ();
-		FireArrow ();
-
+		if (!move.blocking) {
+			Aim ();
+			FireArrow ();
+		}
 	}
 
 	void FireArrow(){
 
 		if(Input.GetButton("Fire1") && Time.time > fireTime){
-			anim.SetTrigger ("FireArrow");
 			anim.SetBool ("DrawArrow", true);
 			move.firing = true;
 			arrowPower.value++;
