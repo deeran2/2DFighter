@@ -146,13 +146,13 @@ public class Player1Health : MonoBehaviour {
 			shield.SetActive (false);
 			stars.SetActive (true);
 
+			shieldUp = false;
 			isDead = true;
 			move.blocking = true;
 
 			anim.SetBool ("BlockBool", false);
 			anim.SetTrigger("BlockBroken");
 
-			//TODO; Insert particle effect for shield break
 			StartCoroutine (Recover ());
 		}
 	}

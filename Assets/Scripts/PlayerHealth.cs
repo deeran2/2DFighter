@@ -146,6 +146,7 @@ public class PlayerHealth : MonoBehaviour {
 			shield.SetActive (false);
 			stars.SetActive (true);
 
+			shieldUp = false;
 			isDead = true;
 			move.blocking = true;
 

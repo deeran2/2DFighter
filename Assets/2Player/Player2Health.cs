@@ -145,6 +145,7 @@ public class Player2Health : MonoBehaviour {
 			shield.SetActive (false);
 			stars.SetActive (true);
 
+			shieldUp = false;
 			isDead = true;
 			move.blocking = true;
 
