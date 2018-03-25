@@ -31,6 +31,9 @@ public class PlayerHealth : MonoBehaviour {
 	private Vector2 shieldSize;
 	private bool shieldUp = false;
 
+	[SerializeField]
+	private Transform fallLimit;
+
 
 	// Use this for initialization
 	void Start () {
@@ -53,7 +56,7 @@ public class PlayerHealth : MonoBehaviour {
 			Block ();
 		}
 
-		if (transform.position.y < -4) {
+		if (transform.position.y < fallLimit.position.y) {
 			Die ();
 		}
 
@@ -107,8 +110,9 @@ public class PlayerHealth : MonoBehaviour {
 
 		isDead = false;
 		currentHealth = maxHealth;
+		currentShieldHealth = maxShieldHealth;
 		transform.position = respawnPoint.position;
-		anim.Play ("Archer1Idle");
+		anim.Play (gameObject.name + "Idle");
 		transform.GetComponent<PlayerMovement> ().enabled = true;
 		transform.GetComponent<PlayerAttack> ().enabled = true;
 	}
