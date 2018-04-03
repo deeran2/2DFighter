@@ -157,7 +157,6 @@ public class PlayerHealth : MonoBehaviour {
 			anim.SetBool ("BlockBool", false);
 			anim.SetTrigger("BlockBroken");
 
-			//TODO; Insert particle effect for shield break
 			StartCoroutine (Recover ());
 		}
 	}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player1Movement : MonoBehaviour {
 	private Rigidbody2D rb;
@@ -20,7 +21,13 @@ public class Player1Movement : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		rb = GetComponent<Rigidbody2D> ();
 	}
-	
+
+	void Update(){
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			SceneManager.LoadScene (0);
+		}
+	}
+
 	void FixedUpdate () {
 		grounded = false;
 			

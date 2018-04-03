@@ -671,9 +671,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 114673136524136780}
   healthColor: {fileID: 114934207619029892}
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 4642793482970722, guid: dfe63f73521084f99a4801c55760fc39,
+    type: 2}
   shield: {fileID: 1751467820253034}
   stars: {fileID: 1413588192088470}
+  fallLimit: {fileID: 4932691041090308, guid: b46e68acc8c1e4a27b009916d33db352, type: 2}
 --- !u!114 &114934207619029892
 MonoBehaviour:
   m_ObjectHideFlags: 1

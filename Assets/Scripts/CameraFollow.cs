@@ -22,6 +22,11 @@ public class CameraFollow : MonoBehaviour {
 		return Mathf.Abs (transform.position.y - player.position.y) > yMargin;
 	}
 
+	void Start(){
+		GameObject archer = GameObject.Find ("Archer2");
+		player = archer.transform;
+	}
+
 	void FixedUpdate(){
 		TrackPlayer ();
 	}
